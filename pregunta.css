@@ -1,0 +1,13 @@
+h2 {
+  color: red;
+}
+button {
+  margin: 10px;
+  padding: 8px 16px;
+  font-size: 16px;
+}
+.output-container {
+  text-align: center;
+  font-family: monospace; /* Para un espaciado uniforme */
+  white-space: pre; /* Mantener formato en líneas de asteriscos */
+}
