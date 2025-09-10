@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>  
     <link rel="stylesheet" href="./pregunta.css"/>
-
-
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
 <h2>Wenassssssssss wenasssssssssssssssdcfgvbh jsjs!</h2>
@@ -18,6 +17,15 @@
 <iframe id="youtubePlayer" width="560" height="315" src="https://www.youtube.com/embed/8pH3AhGwFGY?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="display:none;"></iframe>
 
 <script src="pregunta.js"></script>
+<h2 class="text-3xl font-bold text-center mt-8">Tarjetas de Motos</h2>
+
+    
+    <div id="tarjetas"></div>
+
+    <script type="module">
+      import { TarjetasMotos } from "./Tarjetas.js";
+      document.getElementById("tarjetas").innerHTML = TarjetasMotos();
+    </script>
 </body>
   </body>
 </html>
