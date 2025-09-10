@@ -8,8 +8,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="bg-gray-100 text-gray-900 flex flex-col items-center justify-center min-h-screen">
+    <!-- Incluir la barra de navegación -->
+    <iframe src="navbar.html" frameborder="0" width="100%" style="height: 80px; overflow: hidden;" scrolling="no"></iframe>
 
-    <h2 class="text-2xl font-bold mb-4">🌤 Wenassssssssss wenasssssssssssssssdcfgvbh jsjs!</h2>
+    <!-- Contenido principal -->
+    <h2 class="text-2xl font-bold mb-4 mt-4">🌤 Wenassssssssss wenasssssssssssssssdcfgvbh jsjs!</h2>
     <p class="mb-6">Y por si quiere volver a leer. vuelva a dar clic ;D</p>
 
     <div class="container mb-6">
@@ -34,9 +37,21 @@
       style="display:none;">
     </iframe>
 
-    <!-- Script para tu botón -->
+    <!-- Scripts -->
     <script src="pregunta.js"></script>
-    <!-- Script externo del clima -->
     <script src="clima.js"></script>
+
+    <!-- Bloque de tarjetas de motos -->
+    <h2 class="text-3xl font-bold text-center mt-8">Tarjetas de Motos</h2>
+    <div id="tarjetas"></div>
+    <script type="module">
+      import { TarjetasMotos } from "./Tarjetas.js";
+      document.getElementById("tarjetas").innerHTML = TarjetasMotos();
+    </script>
+
+    <!-- Incluir el footer -->
+    <div class="footer-container mt-8 w-full">
+      <iframe src="footer.html" frameborder="0" width="100%" height="400" scrolling="no" style="width: 100%;"></iframe>
+    </div>
   </body>
 </html>
