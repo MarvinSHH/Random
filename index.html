@@ -5,19 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>  
     <link rel="stylesheet" href="./pregunta.css"/>
-
-
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-<h2>Wenassssssssss wenasssssssssssssssdcfgvbh jsjs!</h2>
-<p>Y por si quiere volver a leer. vuelva a dar clic;D</p>
-<div class="container">
-<button onclick="toggleContent()">Dele clic!</button>
-</div>
-<div id="output" class="output-container"></div>
-<iframe id="youtubePlayer" width="560" height="315" src="https://www.youtube.com/embed/8pH3AhGwFGY?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="display:none;"></iframe>
+  <body class="bg-gray-100 text-gray-900 flex flex-col items-center justify-center min-h-screen">
 
-<script src="pregunta.js"></script>
-</body>
+    <h2 class="text-2xl font-bold mb-4">🌤 Wenassssssssss wenasssssssssssssssdcfgvbh jsjs!</h2>
+    <p class="mb-6">Y por si quiere volver a leer. vuelva a dar clic ;D</p>
+
+    <div class="container mb-6">
+      <button onclick="toggleContent()" class="px-4 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700">
+        Dele clic!
+      </button>
+    </div>
+
+    <!-- Tarjeta de clima -->
+    <div id="weather" class="bg-white shadow-md rounded-lg p-6 w-80 text-center mb-6">
+      <h3 class="text-xl font-semibold mb-2">Clima actual</h3>
+      <p id="city" class="text-lg text-gray-700">---</p>
+      <p id="temp" class="text-3xl font-bold text-blue-600">-- °C</p>
+      <p id="desc" class="italic text-gray-600">---</p>
+    </div>
+
+    <div id="output" class="output-container mt-6"></div>
+
+    <iframe id="youtubePlayer" width="560" height="315"
+      src="https://www.youtube.com/embed/8pH3AhGwFGY?autoplay=1"
+      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
+      style="display:none;">
+    </iframe>
+
+    <!-- Script para tu botón -->
+    <script src="pregunta.js"></script>
+    <!-- Script externo del clima -->
+    <script src="clima.js"></script>
   </body>
 </html>
