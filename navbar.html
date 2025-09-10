@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barra de Navegación</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-transparent">
+    <nav class="bg-gradient-to-r from-blue-800 to-indigo-900 shadow-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <span class="text-white font-bold text-xl tracking-wider drop-shadow-md">MotoWorld</span>
+                    </div>
+                    <div class="hidden md:block ml-10">
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-white hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent hover:border-white transition-all duration-300 transform hover:-translate-y-0.5">Inicio</a>
+                            <a href="#" class="text-gray-300 hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent hover:border-white transition-all duration-300 transform hover:-translate-y-0.5">Catálogo</a>
+                            <a href="#" class="text-gray-300 hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent hover:border-white transition-all duration-300 transform hover:-translate-y-0.5">Eventos</a>
+                            <a href="#" class="text-gray-300 hover:bg-blue-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent hover:border-white transition-all duration-300 transform hover:-translate-y-0.5">Contacto</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center">
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">Iniciar Sesión</button>
+                    <button class="ml-4 bg-transparent border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white px-4 py-2 rounded-md text-sm font-medium shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">Registrarse</button>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-blue-700 focus:outline-none">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#" class="text-white block px-3 py-2 rounded-md text-base font-medium">Inicio</a>
+                <a href="#" class="text-gray-300 hover:bg-blue-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Catálogo</a>
+                <a href="#" class="text-gray-300 hover:bg-blue-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Eventos</a>
+                <a href="#" class="text-gray-300 hover:bg-blue-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contacto</a>
+            </div>
+            <div class="pt-4 pb-3 border-t border-gray-700">
+                <div class="flex items-center px-5">
+                    <div class="flex-shrink-0">
+                        <svg class="h-10 w-10 text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                    </div>
+                    <div class="ml-3">
+                        <div class="text-base font-medium leading-none text-white">Usuario</div>
+                        <div class="text-sm font-medium leading-none text-gray-400">usuario@ejemplo.com</div>
+                    </div>
+                </div>
+                <div class="mt-3 px-2 space-y-1">
+                    <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-blue-700">Mi Perfil</a>
+                    <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-blue-700">Configuración</a>
+                    <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-blue-700">Cerrar Sesión</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        // Toggle mobile menu
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+            
+            // Ajustar altura del iframe desde el padre cuando se abre/cierra el menú
+            if (window.parent && window.parent.document) {
+                const iframe = window.parent.document.querySelector('iframe[src="navbar.html"]');
+                if (iframe) {
+                    if (mobileMenu.classList.contains('hidden')) {
+                        iframe.style.height = '80px';
+                    } else {
+                        iframe.style.height = '400px';
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
