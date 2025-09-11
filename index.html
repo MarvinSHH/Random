@@ -7,25 +7,57 @@
     <link rel="stylesheet" href="./pregunta.css"/>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-<h2>Wenassssssssss wenasssssssssssssssdcfgvbh jsjs!</h2>
-<p>Y por si quiere volver a leer. vuelva a dar clic;D</p>
+  <body class="bg-gray-100 text-gray-900 flex flex-col items-center justify-center min-h-screen">
+    <!-- Incluir la barra de navegación -->
+    <iframe src="navbar.html" frameborder="0" width="100%" style="height: 80px; overflow: hidden;" scrolling="no"></iframe>
 
-<div class="container">
-<button onclick="toggleContent()">Dele clic!</button>
-</div>
+    <!-- Contenido principal -->
+    <h2 class="text-2xl font-bold mb-4 mt-4">🌤 Wenassssssssss wenasssssssssssssssdcfgvbh jsjs!</h2>
+    <p class="mb-6">Y por si quiere volver a leer. vuelva a dar clic ;D</p>
 
+    <div class="container mb-6">
+      <button onclick="toggleContent()" class="px-4 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700">
+        Dele clic!
+      </button>
+    </div>
 
-<div id="output" class="output-container"></div>
-<div class="w-full flex justify-center">
+    <!-- Tarjeta de clima -->
+    <div id="weather" class="bg-white shadow-md rounded-lg p-6 w-80 text-center mb-6">
+      <h3 class="text-xl font-semibold mb-2">Clima actual</h3>
+      <p id="city" class="text-lg text-gray-700">---</p>
+      <p id="temp" class="text-3xl font-bold text-blue-600">-- °C</p>
+      <p id="desc" class="italic text-gray-600">---</p>
+    </div>
+
+    <!-- Output y carrusel -->
+    <div id="output" class="output-container mt-6"></div>
+    <div class="w-full flex justify-center">
       <div id="carrusel-container" class="w-full px-4"></div>
     </div>
 
-<iframe id="youtubePlayer" width="560" height="315" src="https://www.youtube.com/embed/8pH3AhGwFGY?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="display:none;"></iframe>
+    <!-- Video -->
+    <iframe id="youtubePlayer" width="560" height="315"
+      src="https://www.youtube.com/embed/8pH3AhGwFGY?autoplay=1"
+      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
+      style="display:none;">
+    </iframe>
 
-<script src="pregunta.js"></script>
-<script src="carrucel.js"></script>
+    <!-- Scripts -->
+    <script src="pregunta.js"></script>
+    <script src="carrucel.js"></script>
+    <script src="clima.js"></script>
 
-</body>
+    <!-- Bloque de tarjetas de motos -->
+    <h2 class="text-3xl font-bold text-center mt-8">Tarjetas de Motos</h2>
+    <div id="tarjetas"></div>
+    <script type="module">
+      import { TarjetasMotos } from "./Tarjetas.js";
+      document.getElementById("tarjetas").innerHTML = TarjetasMotos();
+    </script>
+
+    <!-- Incluir el footer -->
+    <div class="footer-container mt-8 w-full">
+      <iframe src="footer.html" frameborder="0" width="100%" height="400" scrolling="no" style="width: 100%;"></iframe>
+    </div>
   </body>
 </html>
