@@ -1,72 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carrusel de Motos</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body class="bg-gray-900 flex flex-col items-center justify-center min-h-screen text-white">
-    
-    <!-- Carrusel -->
-    <div class="relative w-full max-w-4xl overflow-hidden rounded-lg shadow-lg">
-      <div id="carousel" class="flex transition-transform duration-500">
-        
-        <!-- Imagen 1 -->
-        <img src="https://www.bmwmotos.com/static/bloques/listados_noticias/noticias/373.m.jpg?1726479973" 
-             class="w-full flex-shrink-0 object-cover" 
-             alt="BMW Moto">
+<div class="relative w-full max-w-4xl mx-auto overflow-hidden rounded-lg shadow-lg my-6 bg-white">
+  <!-- Alto fijo responsivo para evitar saltos; puedes ajustarlo -->
+  <div id="carousel" class="flex transition-transform duration-500 ease-out"
+       style="height: 300px;">
+    <img src="https://www.bmwmotos.com/static/bloques/listados_noticias/noticias/373.m.jpg?1726479973"
+         class="w-full flex-shrink-0 object-cover" alt="BMW Moto">
+    <img src="https://nikomotobike.com/840-large_default/motocicleta-ktm-125-duke-2024.jpg"
+         class="w-full flex-shrink-0 object-cover" alt="KTM 125 Duke">
+    <img src="https://cdn.pixabay.com/photo/2021/04/19/05/12/kawasaki-ninja-h2r-6190254_1280.jpg"
+         class="w-full flex-shrink-0 object-cover" alt="Kawasaki H2R">
+    <img src="https://i0.wp.com/www.asphaltandrubber.com/wp-content/uploads/2018/10/2019-Kawasaki-Z125-55-scaled.jpg?ssl=1"
+         class="w-full flex-shrink-0 object-cover" alt="Kawasaki z125">
+  </div>
 
-        <!-- Imagen 2 -->
-        <img src="https://nikomotobike.com/840-large_default/motocicleta-ktm-125-duke-2024.jpg" 
-             class="w-full flex-shrink-0 object-cover" 
-             alt="KTM 125 Duke">
+  <!-- Controles -->
+  <button id="prevBtn"
+          class="absolute top-1/2 left-4 -translate-y-1/2 bg-black/60 hover:bg-black text-white px-3 py-1 rounded-full">
+    ◀
+  </button>
+  <button id="nextBtn"
+          class="absolute top-1/2 right-4 -translate-y-1/2 bg-black/60 hover:bg-black text-white px-3 py-1 rounded-full">
+    ▶
+  </button>
 
-        <!-- Imagen 3 -->
-        <img src="https://cdn.pixabay.com/photo/2021/04/19/05/12/kawasaki-ninja-h2r-6190254_1280.jpg" 
-             class="w-full flex-shrink-0 object-cover" 
-             alt="Kawasaki H2R">
-
-       <!-- Imagen 3 -->
-        <img src="https://i0.wp.com/www.asphaltandrubber.com/wp-content/uploads/2018/10/2019-Kawasaki-Z125-55-scaled.jpg?ssl=1" 
-             class="w-full flex-shrink-0 object-cover" 
-             alt="Kawasaki z125">
-
-      </div>
-
-      <!-- Botones manuales -->
-      <button onclick="prevSlide()" 
-              class="absolute top-1/2 left-4 -translate-y-1/2 bg-black/50 text-white px-3 py-1 rounded-full">
-        ◀
-      </button>
-      <button onclick="nextSlide()" 
-              class="absolute top-1/2 right-4 -translate-y-1/2 bg-black/50 text-white px-3 py-1 rounded-full">
-        ▶
-      </button>
-    </div>
-
-    <script>
-      const carousel = document.getElementById('carousel');
-      const totalSlides = carousel.children.length;
-      let index = 0;
-
-      function showSlide() {
-        carousel.style.transform = `translateX(${-index * 100}%)`;
-      }
-
-      function nextSlide() {
-        index = (index + 1) % totalSlides;
-        showSlide();
-      }
-
-      function prevSlide() {
-        index = (index - 1 + totalSlides) % totalSlides;
-        showSlide();
-      }
-
-      // Avanzar automáticamente cada 2 segundos
-      setInterval(nextSlide, 2000);
-    </script>
-
-  </body>
-</html>
+  <!-- Indicadores (opcional) -->
+  <div id="dots" class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2"></div>
+</div>

@@ -4,66 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>  
+    <link rel="stylesheet" href="./pregunta.css"/>
     <script src="https://cdn.tailwindcss.com"></script>
+
+
   </head>
-  <body class="bg-gray-100 flex flex-col items-center min-h-screen">
+  <body>
+<h2>Wenassssssssss wenasssssssssssssssdcfgvbh jsjs!</h2>
+<p>Y por si quiere volver a leer. vuelva a dar clic;D</p>
 
-    <h2 class="text-2xl font-bold mt-6">Wenassssssssss wenasssssssssssssssdcfgvbh jsjs!</h2>
-    <p class="mb-6">Y por si quiere volver a leer. vuelva a dar clic ;D</p>
+<div class="container">
+<button onclick="toggleContent()">Dele clic!</button>
+</div>
 
-    <div class="container mb-6">
-      <button onclick="toggleContent()" class="px-4 py-2 bg-blue-500 text-white rounded">Dele clic!</button>
+
+<div id="output" class="output-container"></div>
+<div class="w-full flex justify-center">
+      <div id="carrusel-container" class="w-full px-4"></div>
     </div>
 
-    <div id="output" class="output-container mb-6"></div>
+<iframe id="youtubePlayer" width="560" height="315" src="https://www.youtube.com/embed/8pH3AhGwFGY?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="display:none;"></iframe>
 
-    <iframe id="youtubePlayer" width="560" height="315"
-      src="https://www.youtube.com/embed/8pH3AhGwFGY?autoplay=1"
-      frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
-      style="display:none;" class="mb-6">
-    </iframe>
+<script src="pregunta.js"></script>
+<script src="carrucel.js"></script>
 
-    <!-- ======= Componente Carrusel ======= -->
-    <div class="relative w-full max-w-4xl overflow-hidden rounded-lg shadow-lg mb-6">
-      <div id="carousel" class="flex transition-transform duration-500">
-        <img src="https://www.bmwmotos.com/static/bloques/listados_noticias/noticias/373.m.jpg?1726479973" 
-             class="w-full flex-shrink-0 object-cover" alt="BMW Moto">
-        <img src="https://nikomotobike.com/840-large_default/motocicleta-ktm-125-duke-2024.jpg" 
-             class="w-full flex-shrink-0 object-cover" alt="KTM 125 Duke">
-        <img src="https://img.motor.mapfre.es/wp-content/uploads/2018/06/kawasaki-h2r-1080x399.jpg" 
-             class="w-full flex-shrink-0 object-cover" alt="Kawasaki H2R">
-      </div>
-
-      <!-- Botones manuales -->
-      <button onclick="prevSlide()" class="absolute top-1/2 left-4 -translate-y-1/2 bg-black/50 text-white px-3 py-1 rounded-full">◀</button>
-      <button onclick="nextSlide()" class="absolute top-1/2 right-4 -translate-y-1/2 bg-black/50 text-white px-3 py-1 rounded-full">▶</button>
-    </div>
-
-    <script src="pregunta.js"></script>
-
-    <!-- ======= Script del Carrusel ======= -->
-    <script>
-      const carousel = document.getElementById('carousel');
-      const totalSlides = carousel.children.length;
-      let index = 0;
-
-      function showSlide() {
-        carousel.style.transform = `translateX(${-index * 100}%)`;
-      }
-
-      function nextSlide() {
-        index = (index + 1) % totalSlides;
-        showSlide();
-      }
-
-      function prevSlide() {
-        index = (index - 1 + totalSlides) % totalSlides;
-        showSlide();
-      }
-
-      // Auto-play cada 2 segundos
-      setInterval(nextSlide, 2000);
-    </script>
-
+</body>
   </body>
 </html>
